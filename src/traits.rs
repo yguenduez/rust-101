@@ -1,7 +1,7 @@
 /// Traits are interfaces on stereoids.
 /// With those you can have static and dynamic polymorphism
 
-trait MakesSound {
+pub trait MakesSound {
     fn make_sound(&self) -> String;
 }
 
@@ -9,7 +9,7 @@ trait MakesSound {
 /// that should look quite familiar
 
 /// A struct without members
-struct Cat;
+pub struct Cat;
 
 /// This is how you implement a trait for your type.
 impl MakesSound for Cat {
@@ -18,7 +18,7 @@ impl MakesSound for Cat {
     }
 }
 
-struct Dog;
+pub struct Dog;
 impl MakesSound for Dog {
     fn make_sound(&self) -> String {
         todo!()

@@ -6,6 +6,10 @@ pub fn hello(name: String) -> String {
     format!("Hello {name}")
 }
 
+pub fn another_hello(name: String) -> String {
+    return format!("Hello {name}");
+}
+
 #[cfg(test)]
 mod test {
     use crate::functions::{hello, power_of_2_for};
