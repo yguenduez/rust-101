@@ -1,9 +1,11 @@
+use std::cmp::max;
+
 pub fn power_of_2_for(number: i32) -> i32 {
-    todo!()
+    return number.pow(2)
 }
 
 pub fn get_max(first: i64, second: i64) -> i64 {
-    todo!()
+    return max(first, second);
 }
 
 pub fn hello(name: String) -> String {

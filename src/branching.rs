@@ -1,21 +1,30 @@
 // No real programming language comes without branching
 
 fn get_bigger(first: i32, second: i32) -> i32 {
-    todo!()
+    if first > second {
+        return first
+    }
+    else {
+        return second
+    }
 }
 
 fn picky_eater(food: &str) -> &str {
     if food == "strawberry" {
-        todo!()
-    } else {
-        todo!()
+        return "Mhhh. Yummi"
+    }
+    else if food == "orange" {
+        return "Mhhh. Please more!"
+    }
+    else {
+        return "No thank you!"
     }
 }
 
 fn another_picky_eater(food: &str) -> &str {
     match food {
-        "strawberry" => todo!(),
-        "orange" => todo!(),
+        "strawberry" => return "Mhhh. Yummi",
+        "orange" => return "Mhhh. Please more!",
         // This one "matches" any other expression
         _ => "No thank you!",
     }

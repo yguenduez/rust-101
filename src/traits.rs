@@ -21,11 +21,17 @@ impl MakesSound for Cat {
 pub struct Dog;
 impl MakesSound for Dog {
     fn make_sound(&self) -> String {
-        todo!()
+        "Woof".to_string()
     }
 }
 
 struct ItalianPerson;
+
+impl MakesSound for ItalianPerson {
+    fn make_sound(&self) -> String {
+        "MammaMia".to_string()
+    }
+}
 
 /// Then - how can you use those polymorphic bevahiours?
 /// static polymorphism:
@@ -66,17 +72,17 @@ mod tests {
 
     // This will not compile, as you did not implement MakeSound for an ItalianPerson ;). You can
     // try youself.
-    //    #[test]
-    //    fn an_italian_shouts_mammamia() {
-    //        let person = ItalianPerson;
-    //        assert_eq!(person.make_sound(), "MammaMia".to_string());
-    //    }
+        #[test]
+        fn an_italian_shouts_mammamia() {
+            let person = ItalianPerson;
+            assert_eq!(person.make_sound(), "MammaMia".to_string());
+        }
 
     // Correct the list animals
     #[test]
     fn a_zoo_of_animals_make_funny_sounds() {
         // given
-        let animals: Vec<Box<dyn MakesSound>> = vec![Box::new(Cat), Box::new(Dog)];
+        let animals: Vec<Box<dyn MakesSound>> = vec![Box::new(Cat), Box::new(Dog), Box::new(Dog), Box::new(Cat)];
 
         // when
         let sounds = things_that_make_sound_dynamic(animals);

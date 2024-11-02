@@ -7,13 +7,14 @@ struct Person {
     pub name: String,
 }
 
+
 impl Person {
     pub fn get_age(&self) -> u8 {
-        todo!()
+        return self.age
     }
 
     pub fn birthday(&mut self) {
-        todo!()
+        return self.age += 1;
     }
 }
 
