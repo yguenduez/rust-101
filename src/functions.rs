@@ -1,5 +1,9 @@
 pub fn power_of_2_for(number: i32) -> i32 {
-    number.pow(2)
+    todo!()
+}
+
+pub fn get_max(first: i64, second: i64) -> i64 {
+    todo!()
 }
 
 pub fn hello(name: String) -> String {
@@ -12,7 +16,12 @@ pub fn another_hello(name: String) -> String {
 
 #[cfg(test)]
 mod test {
-    use crate::functions::{hello, power_of_2_for};
+    use crate::functions::{get_max, hello, power_of_2_for};
+
+    #[test]
+    fn given_2_and_4_when_calling_get_max_then_return_4() {
+        assert_eq!(get_max(2, 4), 4)
+    }
 
     #[test]
     fn power_of_2_for_powers_a_number_by_2() {
