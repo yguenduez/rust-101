@@ -1,4 +1,4 @@
-/// There are not classes in Rusts, only structs
+/// There are not classes in Rusts, only structs (record types)
 /// You can implement logic for structs in the respective
 /// "impl" Blocks.
 
@@ -15,11 +15,31 @@ impl Person {
     pub fn birthday(&mut self) {
         todo!()
     }
+
+    // An example ;)
+    pub fn get_name(&self) -> &str {
+        &self.name
+    }
 }
 
 #[cfg(test)]
 mod tests {
     use super::Person;
+
+    #[test]
+    fn given_a_person_when_called_get_name_then_returns_name() {
+        // given
+        let max = Person {
+            age: 34,
+            name: "Max".to_string(),
+        };
+
+        // when
+        let name = max.get_name();
+
+        // then
+        assert_eq!(name, "Max");
+    }
 
     #[test]
     fn given_a_person_when_called_get_age_returns_age() {
@@ -53,4 +73,3 @@ mod tests {
         assert_eq!(jessica.age, 8)
     }
 }
-

@@ -28,8 +28,8 @@ impl MakesSound for Dog {
 struct ItalianPerson;
 
 /// Then - how can you use those polymorphic bevahiours?
-/// static polymorphism:
-fn things_that_make_sound<T: MakesSound>(list_of_things: Vec<T>) -> Vec<String> {
+/// static dispatch (monomorphization):
+fn things_that_make_sound_static<T: MakesSound>(list_of_things: Vec<T>) -> Vec<String> {
     // We iterator over a list_of_things and map every element to a string, as make_sound() returns
     // a string. We then collect every string back into a vector
     list_of_things
@@ -38,7 +38,7 @@ fn things_that_make_sound<T: MakesSound>(list_of_things: Vec<T>) -> Vec<String> 
         .collect()
 }
 
-/// dynamic polymorphism:
+/// dynamic dispatch (virtual method table):
 fn things_that_make_sound_dynamic(list_of_things: Vec<Box<dyn MakesSound>>) -> Vec<String> {
     list_of_things
         .iter()
@@ -50,7 +50,7 @@ fn things_that_make_sound_dynamic(list_of_things: Vec<Box<dyn MakesSound>>) -> V
 mod tests {
     use crate::traits::{things_that_make_sound_dynamic, Cat, Dog, ItalianPerson, MakesSound};
 
-    use super::things_that_make_sound;
+    use super::things_that_make_sound_static;
 
     #[test]
     fn a_cat_makes_a_miau_sound() {
@@ -72,7 +72,7 @@ mod tests {
     //        assert_eq!(person.make_sound(), "MammaMia".to_string());
     //    }
 
-    // Correct the list animals
+    // Correct the list animals (add animals in the correct order)
     #[test]
     fn a_zoo_of_animals_make_funny_sounds() {
         // given
@@ -91,5 +91,16 @@ mod tests {
                 "Miau".to_string()
             ]
         );
+    }
+
+    #[test]
+    fn how_static_dispatch_looks_like() {
+        // The compiler will print out a function for each type we provide
+        // let sounds = things_that_make_sound_static(vec![Cat, Dog]); <-- This is not possible with static! Must
+        // be the same type, as a function is "printed" by the compiler per given type
+
+        // So we can only use this as:
+        let cat_sounds = things_that_make_sound_static(vec![Cat, Cat]);
+        let dog_sounds = things_that_make_sound_static(vec![Dog, Dog]);
     }
 }
