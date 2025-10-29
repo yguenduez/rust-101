@@ -1,6 +1,6 @@
 // No real programming language comes without branching
 
-fn get_bigger(first: i32, second: i32) -> i32 {
+fn get_max(first: i32, second: i32) -> i32 {
     todo!()
 }
 
@@ -25,7 +25,7 @@ fn another_picky_eater(food: &str) -> &str {
 mod tests {
     use crate::branching::{another_picky_eater, picky_eater};
 
-    use super::get_bigger;
+    use super::get_max;
 
     #[test]
     fn given_two_numbers_when_calling_get_bigger_returns_the_bigger_one() {
@@ -34,7 +34,7 @@ mod tests {
         let number_b = 99;
 
         // when
-        let result = get_bigger(number_a, number_b);
+        let result = get_max(number_a, number_b);
 
         // then
         assert_eq!(result, 99);
