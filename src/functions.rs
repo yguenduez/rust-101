@@ -3,7 +3,8 @@ pub fn times_3(number: i32) -> i32 {
     3 * number
 }
 
-pub fn square_of(number: i32) -> i32 {
+// E.g.: 2^2=4
+pub fn power_2(number: i32) -> i32 {
     todo!()
 }
 
@@ -23,7 +24,7 @@ pub fn welcome_to_rust(people: String) -> String {
 
 #[cfg(test)]
 mod test {
-    use crate::functions::{get_max, hello, square_of, times_3, welcome_to_rust};
+    use crate::functions::{get_max, hello, power_2, times_3, welcome_to_rust};
 
     #[test]
     fn given_number_when_called_times_3_then_returns_number_timed_3() {
@@ -38,7 +39,7 @@ mod test {
 
     #[test]
     fn power_of_2_for_powers_a_number_by_2() {
-        assert_eq!(square_of(6), 36);
+        assert_eq!(power_2(6), 36);
     }
 
     #[test]
