@@ -51,11 +51,11 @@ mod test {
 
     #[test]
     fn give_endress_folks_a_hearty_welcome() {
-        let eh = "Endress".to_string();
+        let basel_hack = "BaselHack".to_string();
 
         assert_eq!(
-            welcome_to_rust(eh),
-            "Welcome People of Endress and enjoy some Rust".to_string()
+            welcome_to_rust(basel_hack),
+            "Welcome People of BaselHack and enjoy some Rust".to_string()
         )
     }
 }
