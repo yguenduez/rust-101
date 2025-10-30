@@ -48,7 +48,7 @@ fn things_that_make_sound_dynamic(list_of_things: Vec<Box<dyn MakesSound>>) -> V
 
 #[cfg(test)]
 mod tests {
-    use crate::traits::{things_that_make_sound_dynamic, Cat, Dog, ItalianPerson, MakesSound};
+    use crate::traits::{Cat, Dog, ItalianPerson, MakesSound, things_that_make_sound_dynamic};
 
     use super::things_that_make_sound_static;
 
