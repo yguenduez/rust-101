@@ -5,6 +5,7 @@
 fn loop_over_range() -> i32 {
     let values = vec![4, 5, 3, 6, 3]; // 5 entries
     let mut sum = 0;
+    // loop from inklusive 1 to inklusive 3
     for i in 1..=3 {
         sum += values[i]
     }
