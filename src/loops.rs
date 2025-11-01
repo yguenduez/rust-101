@@ -31,8 +31,7 @@ fn sum_over_vector_functional(vector: &[i32]) -> i32 {
 /// This is your task: concatinate the incoming words
 fn concat_words_functional(words: &[&str]) -> String {
     words.iter().fold(String::new(), |mut string, x| {
-        string.push_str(x);
-        string
+        todo!()
     })
 }
 

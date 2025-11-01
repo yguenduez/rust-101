@@ -5,9 +5,6 @@ pub trait MakesSound {
     fn make_sound(&self) -> String;
 }
 
-/// Implementing a trait is also done in an impl Block,
-/// that should look quite familiar
-
 /// A struct without members
 pub struct Cat;
 
